@@ -18,10 +18,9 @@
 #4. Salir.
 
 # Lista para almacenar los datos
-
 datos = []
 
-# Función para registrar ingresos y egresos de manera secuencial
+# Función para registrar ingresos y egresos
 def registrar():
     print("¡Bienvenido al programa de Control de Ingresos y Egresos!")
     print("Vamos a registrar una transacción.")
@@ -51,4 +50,31 @@ def ver_historial():
             print(f"{item['Fecha']} - {item['Tipo'].capitalize()} - ${item['Monto']} - {item['Descripcion']}")
         print()
 
+# Función para mostrar el menú y ejecutar las opciones
+def mostrar_menu():
+    print("¡Bienvenido al programa de Control de Ingresos y Egresos!")
+    
+    while True:
+# Preguntar después de cada acción
+        print("\nMenú:")
+        print("1. Registrar ingreso/egreso")
+        print("2. Ver saldo actual")
+        print("3. Ver historial")
+        print("4. Salir")
+        
+        opcion = input("Selecciona una opción (1/2/3/4): ")
+        
+        if opcion == '1':
+            registrar()
+        elif opcion == '2':
+            ver_saldo()
+        elif opcion == '3':
+            ver_historial()
+        elif opcion == '4':
+            print("Saliendo del programa. ¡Hasta luego!")
+            break
+        else:
+            print("Opción no válida. Por favor, selecciona una opción válida.\n")
 
+# Ejecutar el menú
+mostrar_menu()
